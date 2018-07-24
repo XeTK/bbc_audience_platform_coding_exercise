@@ -1,0 +1,25 @@
+{
+  "name": "bbc_audience_platform_coding_challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bundle.js",
+    "build": "rollup index.js --format cjs --file bundle.js",
+    "lint": "eslint ."
+  },
+  "author": "Tom Rosier",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "babel-preset-airbnb": "^2.5.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "rollup": "^0.63.4"
+  },
+  "dependencies": {
+    "restify": "^7.2.1"
+  }
+}
