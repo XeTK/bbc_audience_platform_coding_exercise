@@ -7,4 +7,8 @@ export default class User {
     this.creationTime = new Date();
     this.numOfNotificationsPushed = 0;
   }
+
+  messageSent() {
+    this.numOfNotificationsPushed++;
+  }
 }
