@@ -6,10 +6,10 @@ import State from './state';
 function pushToPushBullet(username, body, callback) {
   const user = State.getUser(username);
 
-  const title = `Message for ${username}`
+  const title = `Message for ${username}`;
 
   const client = restify.createJsonClient({
-    url: 'https://api.pushbullet.com'
+    url: 'https://api.pushbullet.com',
   });
 
   client.post(
@@ -17,23 +17,23 @@ function pushToPushBullet(username, body, callback) {
       path: '/v2/pushes',
       headers: {
         'Access-Token': user.accessToken,
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     },
     {
       body,
       title,
-      type: 'note'
-    }, 
+      type: 'note',
+    },
     (err, req, res, obj) => {
-      let hasError = (res.statusCode !== 200);
+      const hasError = (res.statusCode !== 200);
 
       if (!hasError) {
         user.messageSent();
       }
 
       callback(hasError, obj);
-    }
+    },
   );
 }
 
@@ -41,21 +41,18 @@ function pushToPushBullet(username, body, callback) {
 function notifier(req, res, next) {
   const {
     username,
-    body
+    body,
   } = req.body;
 
   let result;
-  let message = `Sending message to ${username}`
+  let message = `Sending message to ${username}`;
   let error = false;
 
-  if (username !== undefined && body != undefined) {
+  if (username !== undefined && body !== undefined) {
     if (State.hasUser(username)) {
-
-      let statusCode = 200;
-
       pushToPushBullet(
         username,
-        body, 
+        body,
         (isError, response) => {
           if (!isError) {
             res.send(response);
@@ -63,8 +60,8 @@ function notifier(req, res, next) {
             error = true;
             message = `Error while sending notification to ${username}`;
           }
-        }
-      )
+        },
+      );
     } else {
       error = true;
       message = `${username} does not exist!`;
@@ -77,8 +74,7 @@ function notifier(req, res, next) {
   // eslint-disable-next-line no-console
   console.log(message);
 
-  if (error)
-    result = new Error(message);
+  if (error) result = new Error(message);
 
   next(result);
 }

@@ -13,8 +13,8 @@ class State {
   }
 
   hasUser(username) {
-  	let user = this.getUser(username);
-  	return (user !== undefined);
+    const user = this.getUser(username);
+    return (user !== undefined);
   }
 }
 

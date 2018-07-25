@@ -9,6 +9,8 @@ export default class User {
   }
 
   messageSent() {
+    // I think the ++ is clearer than the alternative in this case.
+    // eslint-disable-next-line no-plusplus
     this.numOfNotificationsPushed++;
   }
 }

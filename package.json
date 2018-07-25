@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node bundle.js",
     "build": "rollup index.js --format cjs --file bundle.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "fix": "eslint . --fix"
   },
   "author": "Tom Rosier",
   "license": "ISC",

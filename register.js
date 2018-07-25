@@ -2,13 +2,13 @@ import User from './user';
 import State from './state';
 
 function registration(req, res, next) {
-  const { 
-    username, 
-    accessToken 
+  const {
+    username,
+    accessToken,
   } = req.body;
 
   let result;
-  let message = `Registering new user: ${username}`
+  let message = `Registering new user: ${username}`;
   let error = false;
 
   if (username !== undefined && accessToken !== undefined) {
@@ -28,8 +28,7 @@ function registration(req, res, next) {
   // eslint-disable-next-line no-console
   console.log(message);
 
-  if (error)
-    result = new Error(message);
+  if (error) result = new Error(message);
 
   next(result);
 }
