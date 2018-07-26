@@ -3,6 +3,8 @@ import test from 'ava';
 import State from '../state';
 
 test('Adding user to state', (t) => {
+  t.plan(3);
+
   const userObj = {
     username: 'Tom',
   };
@@ -20,6 +22,8 @@ test('Adding user to state', (t) => {
 
 
 test('Getting user from username', (t) => {
+  t.plan(1);
+
   const username = 'Thomas';
 
   const userObj = {
@@ -35,6 +39,8 @@ test('Getting user from username', (t) => {
 });
 
 test('Getting null if no user found', (t) => {
+  t.plan(1);
+
   const username = 'Greggory';
 
   const testObject = State.getUser(username);
@@ -44,6 +50,8 @@ test('Getting null if no user found', (t) => {
 
 
 test('Checking user exists by username', (t) => {
+  t.plan(1);
+
   const username = 'Thomas';
 
   const result = State.hasUser(username);
@@ -52,6 +60,8 @@ test('Checking user exists by username', (t) => {
 });
 
 test('Checking user does not exists by username', (t) => {
+  t.plan(1);
+
   const username = 'Greggory';
 
   const result = State.hasUser(username);

@@ -28,7 +28,9 @@ function registration(req, res, next) {
   // eslint-disable-next-line no-console
   console.log(message);
 
-  if (error) result = new Error(message);
+  if (error) {
+    result = new Error(message);
+  }
 
   next(result);
 }

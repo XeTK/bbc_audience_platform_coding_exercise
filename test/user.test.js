@@ -3,6 +3,8 @@ import test from 'ava';
 import User from '../user';
 
 test('Default constructor constructs', (t) => {
+  t.plan(4);
+
   const username = 'tom';
   const accessToken = 'access_token';
 
@@ -20,6 +22,8 @@ test('Default constructor constructs', (t) => {
 
 
 test('messageSent() increments messages sent.', (t) => {
+  t.plan(2);
+
   const underTest = new User('', '');
 
   t.is(underTest.numOfNotificationsPushed, 0);
