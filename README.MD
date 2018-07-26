@@ -10,6 +10,10 @@ In the root directory execute the following commands,
 2. `npm run build` this will transpile the Javascript to a single .js file which we can then execute.
 3. `npm start` will execute the application
 
+
+## Tests
+To run the tests execute `npm test`, to see the test coverage open `coverage/index.html`.
+
 ## Calls
 
 ### Register

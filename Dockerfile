@@ -1,5 +1,5 @@
-FROM node:carbon-alpine
-MAINTAINER Tom Rosier
+FROM node:10-alpine
+LABEL maintainer="tom.rosier92@gmail.com"
 
 RUN apk add --update python 
 RUN apk add --update python-dev 

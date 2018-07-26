@@ -1,0 +1,17 @@
+{
+  "presets": [
+    "es2015"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "istanbul"
+      ],
+      "minified": false
+    },
+    "production": {
+      "plugins": [],
+      "minified": true
+    }
+  }
+}
