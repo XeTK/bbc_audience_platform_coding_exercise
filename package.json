@@ -41,7 +41,7 @@
     "require": [
       "babel-register"
     ],
-    "failFast": false,
+    "failFast": true,
     "tap": false,
     "verbose": false,
     "no-cache": true,
@@ -58,8 +58,7 @@
     ],
     "reporter": [
       "html",
-      "text",
-      "json-summary"
+      "text"
     ],
     "require": [
       "babel-register"

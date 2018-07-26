@@ -8,10 +8,6 @@
         "istanbul"
       ],
       "minified": false
-    },
-    "production": {
-      "plugins": [],
-      "minified": true
     }
   }
 }

@@ -12,9 +12,10 @@ COPY package.json ./
 
 RUN npm install
 
-COPY *.js ./
+COPY ./ ./
 
 RUN npm run build
+RUN npm test
 
 EXPOSE 8080
 CMD npm start
